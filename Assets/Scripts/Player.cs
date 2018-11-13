@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public delegate void UpdateHelath(int newHealth);
+    public static event UpdateHelath OnUpdateHealth;
+
     private Animator gunAnim;
 	// Use this for initialization
 	void Start ()
@@ -22,6 +25,15 @@ public class Player : MonoBehaviour
         {
             gunAnim.SetBool("isFiring", false);
         }
-    
+
+        
 	}
+    public void SendHealthData(int health)
+    {
+        if (OnUpdateHealth != null)
+        {
+            OnUpdateHealth(health);
+        }
+    }
+
 }

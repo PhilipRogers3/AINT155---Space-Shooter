@@ -15,9 +15,9 @@ TagManager:
   - 
   - 'Player Damage '
   - 'Enemy Heath '
-  - 
-  - 
-  - 
+  - Player Health
+  - 'Enemy Damage '
+  - Wall Collsion
   - 
   - 
   - 
