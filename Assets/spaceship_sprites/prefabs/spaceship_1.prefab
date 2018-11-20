@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 114164293923128922}
   - component: {fileID: 114051376188508118}
   - component: {fileID: 114654566970033792}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: spaceship_1
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -33,9 +33,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 124534}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.692, y: -12.038, z: 0}
-  m_LocalScale: {x: 8.549607, y: 5.4095674, z: 1}
-  m_Children: []
+  m_LocalPosition: {x: -1.88, y: -1.14, z: 0}
+  m_LocalScale: {x: 7.057046, y: 4.942086, z: 1}
+  m_Children:
+  - {fileID: 4545895043893894}
+  - {fileID: 4350293740899694}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -89,8 +91,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -87218089
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 8d18f6d2b73e89b4882fbf3bb5aedb4b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -113,6 +115,63 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 124534}
   m_IsPrefabParent: 1
+--- !u!1 &1320554263638206
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4350293740899694}
+  - component: {fileID: 58085655169216684}
+  m_Layer: 12
+  m_Name: Wall Collison
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1594374088621152
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4545895043893894}
+  m_Layer: 0
+  m_Name: Bullet Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4350293740899694
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1320554263638206}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 493184}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4545895043893894
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1594374088621152}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.002, y: 0.118, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 493184}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &50342383307640108
 Rigidbody2D:
   serializedVersion: 4
@@ -133,6 +192,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!58 &58085655169216684
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1320554263638206}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.1
 --- !u!58 &58177658338481862
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -192,7 +266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2f34f72d21f2184a8ecaf85fcf4332d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 100
   onDie:
     m_PersistentCalls:
       m_Calls: []
@@ -201,8 +275,8 @@ MonoBehaviour:
   onDamaged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114166114857777030}
-        m_MethodName: TakeDamage
+      - m_Target: {fileID: 114575323103160486}
+        m_MethodName: SendHealthData
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -227,8 +301,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 1137759388399990, guid: e20fb23176e1fe6489be9046df1f5a61,
     type: 2}
-  bulletSpawn: {fileID: 4972047219319576, guid: e20fb23176e1fe6489be9046df1f5a61,
-    type: 2}
+  bulletSpawn: {fileID: 4545895043893894}
   fireTime: 0.5
 --- !u!114 &114367021895286472
 MonoBehaviour:
@@ -243,7 +316,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   theCamera: {fileID: 0}
   smoothing: 5
-  adjustmentAngle: 0
+  adjustmentAngle: 270
 --- !u!114 &114575323103160486
 MonoBehaviour:
   m_ObjectHideFlags: 1

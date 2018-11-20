@@ -30,6 +30,7 @@ GameObject:
   - component: {fileID: 114343194522008894}
   - component: {fileID: 114220977869600692}
   - component: {fileID: 114605397564611734}
+  - component: {fileID: 114589369897228994}
   m_Layer: 9
   m_Name: Alien Spaceship
   m_TagString: Untagged
@@ -51,7 +52,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4360419696558834
 Transform:
   m_ObjectHideFlags: 1
@@ -203,6 +204,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a0c15167c2651141a445e7c1cda035f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114589369897228994
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1557326553337786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a87995934150f2e44b47aaa0248fb0ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 10
 --- !u!114 &114605397564611734
 MonoBehaviour:
   m_ObjectHideFlags: 1
