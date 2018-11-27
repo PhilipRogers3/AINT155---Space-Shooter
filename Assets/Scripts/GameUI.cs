@@ -20,6 +20,13 @@ public class GameUI : MonoBehaviour
     {
         Player.OnUpdateHealth -= UpdateHealthBar;
         AddScore.OnSendScore -= UpdateScore;
+
+        int currentHighScore = PlayerPrefs.GetInt("HighScore");
+
+        if(currentHighScore < playerScore)
+        {
+            PlayerPrefs.SetInt("HighScore", playerScore);
+        }
     }
 
     private void UpdateHealthBar(int health)
