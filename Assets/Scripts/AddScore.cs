@@ -9,12 +9,17 @@ public class AddScore : MonoBehaviour
 
 
     public int score = 10;
-
-    public void OnDestroy()
+    private bool scoreSent = false;
+    public void OnAddScore()
     {
         if (OnSendScore != null)
-        {
-            OnSendScore(score);
+        { 
+            if (!scoreSent)
+                {
+                    scoreSent = true;
+                    OnSendScore(score);
+                }
+            
         }
     }
 }

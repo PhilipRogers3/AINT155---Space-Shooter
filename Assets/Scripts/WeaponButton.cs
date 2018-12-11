@@ -1,12 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEbgine.UI;
+using UnityEngine.UI;
 
 public class WeaponButton : MonoBehaviour
 {
     public PlayerShooting playerShooting;
     public int weaponNumber;
+
+    public Text name;
+    public Text cost;
+    public Text description;
+
+    private AudioSource source;
 
     void Start()
     {
@@ -17,7 +23,7 @@ public class WeaponButton : MonoBehaviour
     void SetButton()
     {
         string costString = playerShooting.weapons[weaponNumber].cost.ToString();
-        name.Text = playerShooting.weapons[weaponNumber].name;
+        name.text = playerShooting.weapons[weaponNumber].name;
         cost.text = "£" + playerShooting.weapons[weaponNumber].cost;
         description.text = playerShooting.weapons[weaponNumber].description;
     }
@@ -28,7 +34,8 @@ public class WeaponButton : MonoBehaviour
         {
             ScoreManager.score -= playerShooting.weapons[weaponNumber].cost;
             playerShooting.currentWeapon = weaponNumber;
-        } else
+        }
+        else
         {
             source.Play();
         }
