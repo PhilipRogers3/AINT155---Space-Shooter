@@ -50,7 +50,7 @@ public class HighScoreUI : MonoBehaviour
         {
             if (highScore.scores[i] == score)
             {
-                highScoreText.text += "<color=#FF0000FF>" + (i + 1).ToString() + "." + highScore.scores[i].ToString() + ToString + "</color>\n";
+                highScoreText.text += "<color=#FF0000FF>" + (i + 1).ToString() + "." + highScore.scores[i].ToString() + "</color>\n";
 
             }
             else
@@ -59,7 +59,7 @@ public class HighScoreUI : MonoBehaviour
             }
         }
 
-        string scoresJSON = JsononUtility.ToJson(highScore);
+        string scoresJSON = JsonUtility.ToJson(highScore);
         PlayerPrefs.SetString("HighScores", scoresJSON);
 
     }
