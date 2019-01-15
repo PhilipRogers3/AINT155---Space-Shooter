@@ -29,8 +29,8 @@ GameObject:
   - component: {fileID: 114323097120647058}
   - component: {fileID: 114064392557362496}
   - component: {fileID: 114459934605595148}
-  - component: {fileID: 114557799881776674}
   - component: {fileID: 114638343716183648}
+  - component: {fileID: 114133704293265298}
   m_Layer: 9
   m_Name: Alien Spaceship
   m_TagString: Untagged
@@ -124,6 +124,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a0c15167c2651141a445e7c1cda035f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114133704293265298
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1847109488199000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0df5c87ee4554fd4eb8254762b633cc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 0}
+  bulletSpawn: {fileID: 0}
+  fireTime: 0.5
 --- !u!114 &114323097120647058
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -192,22 +206,6 @@ MonoBehaviour:
   interpolatePathSwitches: 1
   switchPathInterpolationSpeed: 5
   targetCompatibility: {fileID: 0}
---- !u!114 &114557799881776674
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1847109488199000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01a0cc129b467af49b6662d6fca6c726, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 1137759388399990, guid: e20fb23176e1fe6489be9046df1f5a61,
-    type: 2}
-  bulletSpawn: {fileID: 4972047219319576, guid: e20fb23176e1fe6489be9046df1f5a61,
-    type: 2}
-  fireTime: 0.5
 --- !u!114 &114581763982250976
 MonoBehaviour:
   m_ObjectHideFlags: 1

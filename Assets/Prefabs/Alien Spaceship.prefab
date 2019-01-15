@@ -29,8 +29,8 @@ GameObject:
   - component: {fileID: 114306973252969412}
   - component: {fileID: 114343194522008894}
   - component: {fileID: 114220977869600692}
-  - component: {fileID: 114605397564611734}
   - component: {fileID: 114589369897228994}
+  - component: {fileID: 114273686818139594}
   m_Layer: 9
   m_Name: Alien Spaceship
   m_TagString: Untagged
@@ -46,7 +46,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4260743462485794}
-  m_Layer: 0
+  - component: {fileID: 114866418759840080}
+  - component: {fileID: 58424362952711014}
+  m_Layer: 11
   m_Name: Bullet Spawn
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -73,13 +75,28 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1557326553337786}
   m_LocalRotation: {x: -0, y: -0, z: -0.7085215, w: 0.7056893}
-  m_LocalPosition: {x: 24.8, y: -7.35, z: 0}
+  m_LocalPosition: {x: 2.761777, y: -7.062498, z: 0}
   m_LocalScale: {x: 4.6317635, y: 4.5659056, z: 1}
   m_Children:
   - {fileID: 4260743462485794}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90.229004}
+--- !u!58 &58424362952711014
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1637266789290490}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!58 &58897373085784468
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -180,6 +197,21 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: OnDamageEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+--- !u!114 &114273686818139594
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1557326553337786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0df5c87ee4554fd4eb8254762b633cc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 1137759388399990, guid: 2a6d672fa7b49b9438b97ea0fcbae772,
+    type: 2}
+  bulletSpawn: {fileID: 4260743462485794}
+  fireTime: 0.5
 --- !u!114 &114306973252969412
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -216,22 +248,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 10
---- !u!114 &114605397564611734
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1557326553337786}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01a0cc129b467af49b6662d6fca6c726, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 1137759388399990, guid: e20fb23176e1fe6489be9046df1f5a61,
-    type: 2}
-  bulletSpawn: {fileID: 4972047219319576, guid: e20fb23176e1fe6489be9046df1f5a61,
-    type: 2}
-  fireTime: 0.5
 --- !u!114 &114675759755897476
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -286,6 +302,33 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
+--- !u!114 &114866418759840080
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1637266789290490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e9c5c526398a2c48a3c6e20c667abd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onDetectPlayer:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114273686818139594}
+        m_MethodName: Fire
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!212 &212807636804227586
 SpriteRenderer:
   m_ObjectHideFlags: 1
