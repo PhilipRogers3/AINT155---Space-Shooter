@@ -62,7 +62,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1143862564003964}
   m_LocalRotation: {x: -0, y: -0, z: -0.7128772, w: 0.7012889}
-  m_LocalPosition: {x: 1.4780555, y: 0.6910682, z: 0}
+  m_LocalPosition: {x: 9.536134, y: -8.2248955, z: 0}
   m_LocalScale: {x: 4.476575, y: 4.4366684, z: 1}
   m_Children:
   - {fileID: 4976065769295070}
@@ -76,7 +76,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1317321038658734}
   m_LocalRotation: {x: -0, y: -0, z: -0.69991225, w: 0.7142289}
-  m_LocalPosition: {x: -0.011, y: -0.367, z: 0}
+  m_LocalPosition: {x: 0.002, y: 0.294, z: 0}
   m_LocalScale: {x: 1.5906141, y: 1.1039937, z: 1}
   m_Children: []
   m_Father: {fileID: 4690116221391104}
@@ -106,12 +106,12 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1.81
 --- !u!95 &95208741375858268
 Animator:
   serializedVersion: 3
@@ -156,6 +156,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 114971425055541252}
+        m_MethodName: OnAddScore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   onDamaged:
@@ -174,7 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0df5c87ee4554fd4eb8254762b633cc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 1137759388399990, guid: 2a6d672fa7b49b9438b97ea0fcbae772,
+  bulletPrefab: {fileID: 1137759388399990, guid: f0b538d814e25c84fa8e3d55b6445013,
     type: 2}
   bulletSpawn: {fileID: 4976065769295070}
   fireTime: 3
@@ -375,7 +386,7 @@ SpriteRenderer:
   m_Sprite: {fileID: 21300072, guid: 8d18f6d2b73e89b4882fbf3bb5aedb4b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 0
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5

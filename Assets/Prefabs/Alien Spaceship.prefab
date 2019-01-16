@@ -62,7 +62,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1637266789290490}
   m_LocalRotation: {x: -0, y: -0, z: 0.012125939, w: 0.99992657}
-  m_LocalPosition: {x: 0.008, y: -0.214, z: 0}
+  m_LocalPosition: {x: 0.024, y: 0.213, z: 0}
   m_LocalScale: {x: 1.523634, y: 1.0823814, z: 1}
   m_Children: []
   m_Father: {fileID: 4394233724596332}
@@ -75,7 +75,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1557326553337786}
   m_LocalRotation: {x: -0, y: -0, z: -0.7085215, w: 0.7056893}
-  m_LocalPosition: {x: 2.761777, y: -7.062498, z: 0}
+  m_LocalPosition: {x: 3.4965916, y: -16.3874, z: 0}
   m_LocalScale: {x: 4.6317635, y: 4.5659056, z: 1}
   m_Children:
   - {fileID: 4260743462485794}
@@ -96,7 +96,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1.18
 --- !u!58 &58897373085784468
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -179,6 +179,17 @@ MonoBehaviour:
   onDie:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 114589369897228994}
+        m_MethodName: OnAddScore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 114343194522008894}
         m_MethodName: Die
         m_Mode: 1
@@ -223,7 +234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdae83eaccbe83647a67a33dbd75c9c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabToSpawn: {fileID: 0}
+  prefabToSpawn: {fileID: 1557326553337786}
   adjustmentAngle: 0
 --- !u!114 &114343194522008894
 MonoBehaviour:
@@ -367,7 +378,7 @@ SpriteRenderer:
   m_Sprite: {fileID: 21300012, guid: 8d18f6d2b73e89b4882fbf3bb5aedb4b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 0
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
