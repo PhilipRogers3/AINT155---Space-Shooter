@@ -4,24 +4,24 @@ using UnityEngine;
 
 public class ShopController : MonoBehaviour
 {
-    public GameObject shopPanel;
+    //public GameObject shopPanel;
     
-    void onTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-            OpenShop();
-    }
+    //void onTriggerEnter(Collider other)
+    //{
+    //    if (other.gameObject.CompareTag("Player"))
+    //        OpenShop();
+    //}
 
-    void OpenShop()
-    {
-        shopPanel.SetActive(true);
-        Time.timeScale = 0;
-    }
+    //void OpenShop()
+    //{
+    //    shopPanel.SetActive(true);
+    //    Time.timeScale = 0;
+    //}
 
-    public void CloseShop()
-    {
-        shopPanel.SetActive(false);
-        Time.timeScale = 1;
-    }
+    //public void CloseShop()
+    //{
+    //    shopPanel.SetActive(false);
+    //    Time.timeScale = 1;
+    //}
 	
 }
