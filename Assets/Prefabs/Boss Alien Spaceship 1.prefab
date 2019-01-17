@@ -30,7 +30,7 @@ GameObject:
   - component: {fileID: 114971425055541252}
   - component: {fileID: 114880650987717872}
   - component: {fileID: 114003543387564044}
-  - component: {fileID: 114041286859046634}
+  - component: {fileID: 114814682671739538}
   m_Layer: 9
   m_Name: Boss Alien Spaceship 1
   m_TagString: Untagged
@@ -46,8 +46,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4976065769295070}
-  - component: {fileID: 58601120319113446}
   - component: {fileID: 114160122701961436}
+  - component: {fileID: 58178585786328190}
   m_Layer: 11
   m_Name: Bullet Spawn
   m_TagString: Untagged
@@ -62,7 +62,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1143862564003964}
   m_LocalRotation: {x: -0, y: -0, z: -0.7128772, w: 0.7012889}
-  m_LocalPosition: {x: 9.536134, y: -8.2248955, z: 0}
+  m_LocalPosition: {x: 5.859, y: -5.407, z: 0}
   m_LocalScale: {x: 4.476575, y: 4.4366684, z: 1}
   m_Children:
   - {fileID: 4976065769295070}
@@ -76,12 +76,27 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1317321038658734}
   m_LocalRotation: {x: -0, y: -0, z: -0.69991225, w: 0.7142289}
-  m_LocalPosition: {x: 0.002, y: 0.294, z: 0}
+  m_LocalPosition: {x: 0.005, y: 0.376, z: 0}
   m_LocalScale: {x: 1.5906141, y: 1.1039937, z: 1}
   m_Children: []
   m_Father: {fileID: 4690116221391104}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &58178585786328190
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1317321038658734}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2
 --- !u!58 &58277229806064802
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -96,22 +111,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.4
---- !u!58 &58601120319113446
-CircleCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1317321038658734}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1.81
+  m_Radius: 0.35
 --- !u!95 &95208741375858268
 Animator:
   serializedVersion: 3
@@ -174,21 +174,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: OnDamageEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
---- !u!114 &114041286859046634
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1143862564003964}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0df5c87ee4554fd4eb8254762b633cc1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 1137759388399990, guid: f0b538d814e25c84fa8e3d55b6445013,
-    type: 2}
-  bulletSpawn: {fileID: 4976065769295070}
-  fireTime: 3
 --- !u!114 &114091803332163080
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -225,7 +210,7 @@ MonoBehaviour:
   onDetectPlayer:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114041286859046634}
+      - m_Target: {fileID: 114814682671739538}
         m_MethodName: Fire
         m_Mode: 1
         m_Arguments:
@@ -325,6 +310,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+--- !u!114 &114814682671739538
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1143862564003964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d73c40c92c23e047bcd85f1a3a2ad5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 1137759388399990, guid: f0b538d814e25c84fa8e3d55b6445013,
+    type: 2}
+  bulletSpawn: {fileID: 4976065769295070}
+  fireTime: 2
 --- !u!114 &114880650987717872
 MonoBehaviour:
   m_ObjectHideFlags: 1

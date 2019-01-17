@@ -2369,9 +2369,9 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Keys
 
-    W = Move Up
+    W = Move Left
 
-    S = Move Down
+    S = Move Right
 
     A = Move Back
 
